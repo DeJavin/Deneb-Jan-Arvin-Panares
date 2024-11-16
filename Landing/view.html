@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .img-fluid {
+            border-radius: 10px;
+            max-height: 400px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="text-center">
+            <h1 id="character-name"></h1>
+            <img id="character-image" class="img-fluid mb-4" alt="Character Image">
+            <p><strong>Films:</strong> <span id="character-films"></span></p>
+            <p><strong>TV Shows:</strong> <span id="character-tvShows"></span></p>
+            <p><strong>Video Games:</strong> <span id="character-videoGames"></span></p>
+
+            <a href="index.html" class="back-link">← Back to Character List</a>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+
+        document.getElementById("character-name").textContent = getQueryParam("name");
+        document.getElementById("character-image").src = getQueryParam("imageUrl");
+        document.getElementById("character-image").alt = getQueryParam("name") + " Image";
+        document.getElementById("character-films").textContent = getQueryParam("films");
+        document.getElementById("character-tvShows").textContent = getQueryParam("tvShows");
+        document.getElementById("character-videoGames").textContent = getQueryParam("videoGames");
+    </script>
+</body>
+
+</html>
