@@ -59,14 +59,6 @@
       z-index: 1000;
     }
 
-    .menu-icon {
-      display: none;
-      cursor: pointer;
-      font-size: 24px;
-      color: var(--main-color);
-      display: none;
-    }
-
     
     .logo{
       font-size: 2rem;
@@ -87,7 +79,17 @@
     }
 
     
-    
+    .custom-navbar {
+    background-color: #000000;
+    color: #ffffff; 
+    }
+    .custom-navbar .nav-link {
+    color: #ffffff; 
+    }
+    .custom-navbar .nav-link:hover {
+    color: #ffff15; 
+    }
+
 
     .navbar a {
       font-size: 1.8rem;
@@ -139,17 +141,19 @@
       font-weight: 500;
       line-height: 1.8;
     }
-    .home-img img{
-      width: 30vw;
+
+    .custom-glow {
       border-radius: 50%;
-      box-shadow: 0 0 15px var(--main-color);
-      transition: 0.4s ease-in-out;
+      box-shadow: 0 0 15px var(--main-color); 
+      transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
     }
-    .home-img img:hover{
-      box-shadow: 0 0 15px var(--main-color),
-              0 0 18px var(--main-color),
-              0 0 21px var(--main-color);
+
+    .custom-glow:hover {
+      box-shadow: 0 0 10px var(--main-color), 0 0 15px var(--main-color), 0 0 20px var(--main-color); 
+      transform: scale(1.05);
     }
+
+
     .social-icons a{
       display: inline-flex;
       justify-content: center;
@@ -316,21 +320,15 @@
       margin: 5rem 0;
     }
 
-    .services{
-      background-color: var(--bg-color);
-      color: #000000;
+    .services {
+      padding: 60px 0;
     }
-    .services h2{
-      color: var(--text-color)
-  
-    }
-    .services-container{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      align-items: center;
-      gap: 2.5rem;
-    }
-    .service-box{
+
+    .service-box {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -341,12 +339,16 @@
       border: 5px solid transparent;
       transition: 0.4s ease-in-out;
     }
-    .service-box:hover{
+
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       background: var(--second-bg-color);
       color: var(--main-color);
       border: 5px solid var(--main-color);
       transform: scale(1.03);
     }
+
     .service-info{
       display: flex;
       flex-direction: column;
@@ -355,19 +357,46 @@
       align-items: center;
       padding: 5rem;
     }
-    .service-info h4{
-      font-size: 4rem;
-      margin: 2rem 0;
-      font-weight: 800;
+
+    .service-info i {
+      color: #000; 
+      transition: color 0.3s ease;
+
     }
-    .service-info p{
+
+    .service-info h4 {
+      color: #000; 
+      font-weight: 800;
+      font-size: 4rem;
+      margin-top: 20px;
+      transition: color 0.3s ease;
+      margin: 2rem 0;
+     
+    }
+
+    .service-info p {
+      color: #0b0b0b;
       font-size: 1.4rem;
+      margin-top: 10px;
+      transition: color 0.3s ease;
       font-weight: 600;
       line-height: 1.7;
     }
-    .service-info i{
-      font-size: 8rem;
+
+       
+    .service-box:hover .service-info i,
+    .service-box:hover .service-info h4,
+    .service-box:hover .service-info p {
+      color:var(--main-color); 
     }
+
+    .services-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      gap: 2.5rem;
+    }
+
 
     ::-webkit-scrollbar{
       width: 10px;
@@ -418,7 +447,7 @@
     }
     .navbar{
       position: absolute;
-      top: 50px;
+      top: 20px;
       right: 0;
       width: 100%;
       padding: 1rem 3rem;
@@ -456,59 +485,66 @@
 
 
 
-    <header class="header navbar navbar-expand-lg">
-      <a href="#home" class="logo navbar-brand">
+<header>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+  
+    <div class="container">
+      <a class="navbar-brand logo" href="#home">
         Deneb <span>Pañares</span>
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="bx bx-menu" id="menu-icon"></i>
+        <div class="navbar-toggler-icon">
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
-        <nav class="navbar-nav ms-auto">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#footer" class="nav-link">Contact</a>
-        </nav>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Contact</a>
+          </li>
+        </ul>
       </div>
-    </header>
+    </div>
+  </nav>
+</header>
 
-    <section class="home" id="home">
-      <div class="home-content">
-          <h1>Hi, It's <span>Deneb</span></h1>
-          <h3>
-              I'm a <span>Frontend Developer</span>
-          </h3>
-          <p>I am eager to apply my skills to your projects and help you achieve your goals. If you're looking for a motivated and 
-            creative developer to elevate your digital presence, look no further. Let's get started on your next big idea today!</p>
-      
-      <div class="social-icons">
-          <a href="#">
-              <i class="bx bxl-github"></i>
-          </a>
-
-          <a href="#">
-              <i class="bx bxl-linkedin-square"></i>
-          </a>
-
-          <a href="#">
-              <i class="bx bxl-instagram-alt"></i>
-          </a>
-
-          <a href="#">
-              <i class="bx bxl-twitter"></i>
-          </a>
+<section class="home" id="home">
+  <div class="container-fluid d-flex align-items-center justify-content-center py-5">
+    <div class="row w-100">
+      <div class="col-lg-6 text-center text-lg-start">
+        <div class="home-content">
+          <h1 class="display-3">Hi, It's <span>Deneb</span></h1>
+          <h3 class="display-4">I'm a <span>Frontend Developer</span></h3>
+          <p class="lead">I am eager to apply my skills to your projects and help you achieve your goals. If you're looking for a motivated and creative developer to elevate your digital presence, look no further. Let's get started on your next big idea today!</p>
+          
+          <div class="social-icons">
+            <a href="#" class="btn btn-outline-light rounded-circle mx-2"><i class="bx bxl-github"></i></a>
+            <a href="#" class="btn btn-outline-light rounded-circle mx-2"><i class="bx bxl-linkedin-square"></i></a>
+            <a href="#" class="btn btn-outline-light rounded-circle mx-2"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#" class="btn btn-outline-light rounded-circle mx-2"><i class="bx bxl-twitter"></i></a>
+          </div>
+        </div>
       </div>
+
+      <div class="col-lg-6 text-center text-lg-end">
+        <div class="home-img">
+          <img class=custom-glow src="Landing/picko.jpg" alt="Deneb" class="img-fluid rounded-circle shadow-lg" style="width: 80%; max-width: 380px; transition: box-shadow 0.3s ease;">
+        </div>
+      </div>
+    </div>
   </div>
-
-      <div class="home-img">
-          <img src="Landing/picko.jpg" alt="">
-      </div>
-
-  </section>
+</section>
+  
 
 
 <section id="about" class="mb-5" style="background-color: var(--second-bg-color); padding: 12rem 0;">
@@ -541,40 +577,49 @@
 
 
 
-    <section class="services" id="services">
-
-      <h2 class="heading">Services</h2>
-
-
-      <div class="services-container">
-          <div class="service-box">
-              <div class="service-info">
-                  <i class="bx bxl-figma"></i>
-                  <h4>UI/UX Design</h4>
-                  <p>If you're looking to redesign your website, launch a new app, or enhance your digital presence, I am here to 
-                      bring your vision to life. Let's work together to create designs that resonate with your audience and 
-                      achieve your business goals. Your success is my priority, and I am committed to delivering results that 
-                      leave a lasting impression.</p>
+<section class="services" id="services">
+  <div class="container">
+      <h2 class="text-center mb-5" style="font-size: 6rem; color:#f9f9f9">Services</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          
+          <div class="col">
+              <div class="service-box text-center shadow">
+                  <div class="service-info">
+                      <i class="bx bxl-figma" style="font-size: 5rem;"></i>
+                      <h4>UI/UX Design</h4>
+                      <p>If you're looking to redesign your website, launch a new app, or enhance your digital presence, I am here to bring your vision to life.</p>
+                  </div>
               </div>
           </div>
-
-          <div class="service-box">
-              <div class="service-info">
-                  <i class="bx bx-code"></i>
-                  <h4>Frontend Development </h4>
-                  <p>If you are in need of a complete website overhaul, a new web application, or enhancements to your existing 
-                      digital assets, I am ready to deliver solutions that captivate your audience and drive engagement. 
-                      Let's collaborate to create exceptional digital experiences that set your brand apart. 
-                      Your goals are my priority, and I am here to make your project a success.</p>
+          
+          <div class="col">
+              <div class="service-box text-center shadow">
+                  <div class="service-info">
+                      <i class="bx bx-code" style="font-size: 5rem;"></i>
+                      <h4>Frontend Development</h4>
+                      <p>Need a responsive website, web app, or improvements to your existing website? I deliver modern, fast, and scalable solutions.</p>
+                  </div>
               </div>
           </div>
-
+          
+          <div class="col">
+              <div class="service-box text-center shadow">
+                  <div class="service-info">
+                      <i class="bx bx-palette" style="font-size: 5rem;"></i>
+                      <h4>Graphic Design</h4>
+                      <p>Bring your brand to life with visually appealing graphics, logos, and other design assets that engage and inspire.</p>
+                  </div>
+              </div>
+          </div>
       </div>
-  </section>
+  </div>
+</section>
+
+
 
   <section class="projects" id="projects">
     <div class="container">
-      <h2 class="text-center">Projects</h2>
+      <h2 class="text-center" style="color: #f9f9f9; font-size: 6rem;">Projects</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
         <div class="col">
           <div class="card mb-4" style="position: relative; border-radius: 20px;">
@@ -674,50 +719,7 @@
       </div>
     </footer>
     
-    <script>
-
-const menuIcon = document.getElementById('menu-icon');
-const navbar = document.getElementById('navbarNav'); 
-
-menuIcon.addEventListener('click', () => {
-    navbar.classList.toggle('show'); 
-});
-
-
-const scrollLinks = document.querySelectorAll('a[href^="#"]');
-
-scrollLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const offset = document.querySelector('.header').offsetHeight;
-
-        window.scrollTo({
-            top: targetElement.offsetTop - offset,
-            behavior: 'smooth'
-        });
-
-        
-        navbar.classList.remove('show'); 
-    });
-});
-
-
-const header = document.querySelector('.header');
-const sticky = header.offsetTop;
-
-const stickyHeader = () => {
-    if (window.pageYOffset > sticky) {
-        header.classList.add('sticky');
-    } else {
-        header.classList.remove('sticky');
-    }
-};
-
-window.onscroll = () => {
-    stickyHeader();
-};
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
   </script>
      
