@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/xxx.png" type="image/png">
+  <title>404 Error Page</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('landing/images/gif.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+    .error-container {
+      text-align: center;
+      background-color: transparent;
+      padding: 3rem;
+      border-radius: 15px;
+      max-width: 600px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .error-code {
+      font-size: 10rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 0 0 20px #47ddff, 0 0 40px #47ddff, 0 0 60px #47ddff;
+      animation: shimmer 2s infinite;
+    }
+    .error-message {
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: #ffacd2;
+      margin: 1rem 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #47ddff, 0 0 20px #47ddff;
+      animation: shimmer 3s infinite;
+    }
+    .error-subtext {
+      font-size: 1.4rem;
+      color: #dddddd;
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    }
+    .home-btn {
+      font-size: 1.2rem;
+      padding: 0.5rem 2rem;
+      background-color: #47ddff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      text-shadow: none;
+      transition: all 0.3s ease-in-out;
+      animation: glow 2s infinite;
+    }
+    .home-btn:hover {
+      background-color: #47ddff;
+      box-shadow: 0 0 10px #47ddff, 0 0 20px #47ddff;
+      transform: scale(1.05);
+    }
+
+   
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 20px #47ddff, 0 0 40px #47ddff, 0 0 60px #47ddff;
+      }
+      50% {
+        text-shadow: 0 0 30px #47ddff, 0 0 60px #47ddff, 0 0 90px #47ddff;
+      }
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes shimmer {
+      0% {
+        color: #d4b1ff;
+      }
+      50% {
+        color: #ffffff;
+      }
+      100% {
+        color: #d4b1ff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <div class="error-message">Lost in the Void</div>
+    <p class="error-subtext">The page you're searching for has <br>drifted into the unknown.<br>Let's guide you back home!</p>
+    <a href="index.html" class="home-btn">Go Back Home</a>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
