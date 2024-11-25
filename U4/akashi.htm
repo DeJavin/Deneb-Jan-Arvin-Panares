@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akashi Seijuro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .text {
+            font-size: 3vw;  /* Use viewport width to make it responsive */
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Media queries for more control */
+        @media (max-width: 768px) {
+            .text {
+                font-size: 8vw;  /* Adjust font size for tablets and smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text {
+                font-size: 10vw;  /* Adjust font size for mobile screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/3oGBFdr-O4U?autoplay=1&controls=0&showinfo=0&modestbranding=1&mute=1&rel=0&loop=1"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+
+        <div class="navbar position-absolute top-0 start-0 p-3" style="z-index: 1;">
+            <a href="knb.html"><img src="images/pngegg.png" class="logo" width="150px"></a>
+    </div>
+    </div>
+</body>
+</html>
